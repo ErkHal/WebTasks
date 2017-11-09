@@ -28,12 +28,20 @@ const showImages = () => {
 
     json.forEach((image) => {
 
-      let node = document.createElement("li");
-      let listImage = document.createElement("IMG")
-      listImage.src = `img/original/${image.mediaUrl}`;
-      node.class = "listImg";
-      node.appendChild(listImage);
-      ul.appendChild(node);
+      let listItem = document.createElement("li");
+      let listImage = document.createElement("IMG");
+      let figure = document.createElement("figure");
+      let figCaption = document.createElement("figcaption");
+      let figCaptionText = document.createTextNode(image.mediaTitle);
+      let linkToImg = document.createElement("a");
+      linkToImg.href = `img/original/${image.mediaUrl}`;
+      listImage.src = `img/thumbs/${image.mediaThumb}`;
+      linkToImg.appendChild(listImage);
+      figCaption.appendChild(figCaptionText);
+      figure.appendChild(linkToImg)
+      figure.appendChild(figCaption);
+      listItem.appendChild(figure);
+      ul.appendChild(listItem);
 
     });
   });
