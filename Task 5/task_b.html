@@ -17,12 +17,13 @@
 </head>
 
 <body>
-
-    <form>
-        <input>
-        <input>
+  <h3>Lets upload some stuff</h3>
+    <form action="http://10.114.32.38/firstServlet/upload">
+        <input type="file" name="uploadableFile" accept="image/*">
+        <input type="submit" value="Upload">
     </form>
     <p id="message"></p>
+    <img id="jsonpic">
 
 <script src="js/main_b.js"></script>
 </body>
