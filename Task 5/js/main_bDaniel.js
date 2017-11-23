@@ -30,9 +30,8 @@ const upload = (evt) => {
     body:data
   };
 
-  fetch('http://10.114.32.38:8080/firstServlet/upload', settings).then((response) => {
+  fetch('http://10.114.32.116:8080/WebApplication1/FileServlet', settings).then((response) => {
     return response.json();
-
   }).then((json) => {
     console.log(json);
     message.innerHTML = json.src;
